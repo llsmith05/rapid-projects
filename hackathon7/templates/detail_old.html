@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pet Dat | View profile</title>
+
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ url_for('static', filename='jquery-1.10.2.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-9">
+      <h1>Pet Dat</h1><h4>I'd Like to Pet Dat</h4>
+      <hr>
+    </div>
+    <div class="col-lg-3">
+      <br>
+      <button type="button" class="btn btn-primary btn-sm">account information</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row well well-md">
+        <div class="row">
+          <div class="col-md-9">
+            <h2><b>{%if item.name %} {{ item.name }}</b></h2>
+            <b>Age: </b>{{ item.age }}<br>
+            <b>Gender: </b>{{ item.gender }}<br>
+            <b>Likes: </b>{{ item.like }}<br>
+            <b>Dislikes: </b>{{ item.dislike }}<br>  
+            {% else %} Profile not found {% endif %}        
+        </div>
+        {% if name %}
+        <div class="row">
+          <div class="col-md-10">
+            <br><br><br>
+            <form action="/save/{{id}}">
+              <button type="submit" class="btn btn-success btn-lg">Save to recipe box</button>
+            </form>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="col-md-2"></div> 
+
+  </div>
+</div>
+                
+ 
+
+  </body>
+</html>

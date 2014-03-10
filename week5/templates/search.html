@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=4.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Buff book store</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <style>
+    body {
+        margin-top: 60px;
+    }
+    p.margin {
+        margin:0px 20px;
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">Buff Book Store</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-'md-12">
+                <h1>SEARCH</h1>
+                <form action="">
+                <p>Search: <input type="text" name="Search">
+                <button type="button" class="btn btn-search">GO</button></p>
+                <p>Result:</p>
+                  <ul id="RESULT">
+                  {% for item in list_of_results %}
+                    <div class="row">
+                      <div class="col-md'-6">
+                        {{ item[0] }}
+                      </div>
+                      <div class="col-md'-4">
+                        {{ item[1] }}
+                      </div>
+                      <div class="col-md'-2">
+                        {{ item[2] }}
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </ul>
+                  <!-- Indicates a successful or positive action -->
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='jquery-1.9.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
+</body>
+
+</html>

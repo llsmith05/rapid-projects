@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>My Webpage</title>
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='jquery-1.9.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='holder.js') }}"></script>
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<h1>Users</h1>
+			<ul class="list-group">
+				{% for item in userbullets %}
+				<li class="list-group-item">{{ item }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+</body>
+</html>

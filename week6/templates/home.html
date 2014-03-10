@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>My Webpage</title>
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='jquery-1.9.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='holder.js') }}"></script>
+</head>
+<body>
+	<nav class="navbar navbar-default" role="navigation">
+  		<div class="container-fluid">
+  			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      			<ul class="nav navbar-nav">
+      				{% for item in navigation %}
+        			<li><a href="{{ item.href }}">{{ item.title }}</a></li>
+    				{% endfor %}
+    			</ul>
+    		</div>
+    	</div>
+    </nav>
+
+    <h1>My Webpage</h1>
+    <div class="well">{{ subtitle }}</div>
+</body>
+</html>

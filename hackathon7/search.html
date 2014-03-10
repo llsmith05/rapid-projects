@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>HomewardBound | Search</title>
+
+   <!-- Bootstrap -->
+   <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+
+   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+   <![endif]-->
+ </head>
+ <body>
+
+   <script src="{{ url_for('static', filename='jquery-1.10.2.js') }}"></script>
+   <script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+
+ <div class="container">
+   <div class="row">
+     <div class="col-lg-9">
+      <div><h1>HomewardBound</h1><h4>Lost and Found Pet Database</h4></div>
+      <hr>
+     </div>
+     <div class="col-lg-3">
+       <br>
+       <button type="button" class="btn btn-primary btn-sm">account information</button>
+     </div>
+   </div>
+
+   <div class="row">
+
+
+   <div class="col-md-2"></div>
+   <div class="col-md-6">
+
+     <form class="well well-lg">
+         <div class="form-group">
+          <div class ="row">
+            <label for="species" class="col-sm-2">Species</label>
+            <div class="col-sm-7">
+              <input type="age" class="form-control" id="ageinput" placeholder="Dog/Cat/Horse/Etc.">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <label for="gender" class="col-sm-2">Gender</label>
+            <div class="col-sm-6">
+              <input type="radio" name="sex" value="male">Male
+              <input type="radio" name="sex" value="female">Female
+            </div>
+          </div>
+          <br>
+          <div class="row">
+          <label for="desc" class="col-sm-2">Description</label>
+            <div class="col-sm-7">
+              <input class="form-control" id="desc" placeholder="Like">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+          <label for="lat" class="col-sm-2">Coordinates</label>
+            <div class="col-sm-3">
+              <input class="form-control" id="lat" placeholder="40.01">
+            </div>
+            <div class="col-sm-3">
+              <input class="form-control" id="long" placeholder="-105.2">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-xs-3">
+             <button type="button" class="btn btn-warning btn-lg">Search</button>
+            </div>
+          </div>
+         </div>
+       
+
+     </form>
+     <hr>
+
+     <h3>Results</h3>
+
+     {% for item in list %}
+
+     <div class="row well well-md">
+      <div class="col-md-5">
+           <img src="{{ item.url }}">
+      </div>
+       <div class="col-md-5">
+       <div class="row">
+         <div class="col-md-5">
+           <h4><b>{{item.name}}</b></h4>
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-md-10">
+           <b>Species: </b>{{ item.species }}<br>
+           <b>Gender: </b>{{ item.gender }}<br>
+           <b>Description: </b>{{ item.color }}<br>
+           <b>Coordinates: </b>{{ item.latitude }} , {{ item.longitude }}<br>  
+         </div>
+         <div class="col-md-2">
+           <button type="submit" class="btn btn-success btn-sm">More info</button>
+         </div>
+       </div>
+      </div>
+     </div>
+     {% endfor %}
+
+   </div> 
+   
+
+   </div>
+
+ </div>
+
+   
+   
+   
+   
+   
+   
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://code.jquery.com/jquery.js"></script>
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+ </body>
+</html>

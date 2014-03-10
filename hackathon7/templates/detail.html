@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>My Webpage</title>
+    <style>
+      #map-canvas {
+        height: 300px;
+        /*width: 80%;*/
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='jquery-1.10.2.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='holder.js') }}"></script>
+    <script>
+      var map;
+      function initialize() {
+        var mapOptions = {
+          zoom: 10,
+          center: new google.maps.LatLng(40.01, -105)
+        };
+        map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+</head>
+<body>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      {% if item.name %}
+      <h1>{{ item.name }}</h1>
+      <div class="row"><!--top section-->
+          <div class="col-md-4">
+            <img src="{{ item.url }}">
+          </div>
+          <div class="col-md-8">
+            <ul class="list-group">
+              <li class="list-group-item">Species: {{ item.species }}</li>
+              <li class="list-group-item">Color: {{ item.color }}</li>
+              <li class="list-group-item">Location: {{ item.latitude }}, {{ item.longitude}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <br />
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div id="map-canvas"></div>
+          </div>
+        </div>
+
+        <!-- If no pet, blank page -->
+      {% else %}
+      <h1>No such pet!</h1>
+      {% endif %}
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</body>
+</html>

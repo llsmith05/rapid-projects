@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Leland Smith</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Coursework</a></li>
+            <li><a href="#">Work Experience</a></li>
+            <li><a href="#">Current Projects</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          {% if name %}
+            <h1>Hello {{ name }}! Welcome to my resume.</h1>
+          {% else %}
+            <h1>Hello Anonymous!</h1>
+          {% endif %}
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <!--MAIN CONTENT-->
+          <div class="row jumbotron">
+            <div class="col-md-3">
+              <img data-src="js/holder.js/250x250" alt="Leland">
+            </div>
+            <div class="col-md-9">
+              <div class="well">
+                <h1>Leland Smith</h1>
+                <p>University of Colorado at Boulder, MS ICTD Candidate, 2015</p>
+                <p>Wesleyan University, BA Classics, 2005</p>
+                <p>Professional in technology and international development, with 10 years of experience in project management, program design, product development, training and curriculum design, with over two years of international field work.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Key Experience</h2>              
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+                <div class="thumbnail">
+                  <img data-src="holder.js/250x150" alt="Exp">
+                  <div class="caption">
+                    <h3>Project Management</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in.</p>
+                    <p align="center"><a href="#" class="btn btn-primary" role="button">Read More</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="thumbnail">
+                  <img data-src="holder.js/250x150" alt="Exp">
+                  <div class="caption">
+                    <h3>Program Design</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in.</p>
+                    <p align="center"><a href="#" class="btn btn-primary" role="button">Read More</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="thumbnail">
+                  <img data-src="holder.js/250x150" alt="Exp">
+                  <div class="caption">
+                    <h3>Technology Platforms</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in.</p>
+                    <p align="center"><a href="#" class="btn btn-primary" role="button">Read More</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="thumbnail">
+                  <img data-src="holder.js/250x150" alt="Exp">
+                  <div class="caption">
+                    <h3>International Experience</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in.</p>
+                    <p align="center"><a href="#" class="btn btn-primary" role="button">Read More</a></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 well">
+              <p>Copyright 2014 Leland Smith</p>
+            </div>
+          </div>
+        </div><!--end main content-->
+        <div class="col-md-1"></div>
+
+      </div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ url_for('static', filename='jquery-1.9.1.min.js') }}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='holder.js') }}"></script>
+  </body>
+</html>

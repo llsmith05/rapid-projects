@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Search</title>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script></head>
+<body>
+  <div class="container">
+    <!--nav bar-->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">The Helping Buffs</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Dashboard</a></li>
+            <li><a href="#">Request</a></li>
+          </ul>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search for jobs">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Log out</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div> <!-- container -->
+
+  <div class="row"><!--top section-->
+    <div class="col-md-3"></div> <!--side space-->
+    <div class="col-md-6">
+      <h1>Search</h1>
+      <p>Find jobs near you to earn quick money! Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <form role="form" class="form-inline">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search by keyword">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+      </form>
+    </div>
+    <div class="col-md-3"></div> <!--side space-->
+  </div><!--end top section-->
+<br />
+  <div class="row"><!--main container-->
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <table class="table table-hover">
+        <tr>
+          <th>Title</th>
+          <th>Job Description</th>
+          <th>Deadline <span class="caret"></span></th>
+          <th>Bounty</th>
+        </tr>
+        <tr>
+          <td>Bring me pizza</td>
+          <td>I need a large pizza ONLY from (some place tasty) delivered to my house at 123 Road St [...]</td>
+          <td>Tonight, 9 pm</td>
+          <td>$8</td>
+        </tr>
+        <tr>
+          <td>Help moving</td>
+          <td><a data-toggle="modal" data-target="#job-modal" style="color:#333; text-decoration:none;">I have to move a couch, two dressers and a table from (dorm) to (apartment building) [...]</a></td>
+          <td>2/12, 12 pm</td>
+          <td>$40</td>
+        </tr>
+        <tr>
+          <td>Math tutoring</td>
+          <td>I suck at math. I need 4 hours or so of help by next week so I don't fail out of everything [...]</td>
+          <td>2/16, 9pm</td>
+          <td>$80</td>
+        </tr>
+        <tr>
+          <td>Physics tutoring</td>
+          <td>I suck at physics. I need 4 hours or so of help by next week so I don't fail out of everything [...]</td>
+          <td>2/16, 9pm</td>
+          <td>$80</td>
+        </tr>
+        <tr>
+          <td>Speling tootoring</td>
+          <td>I suck at speling. I need 4 hours or so of help by next week so I don't fail out of everything [...]</td>
+          <td>2/16, 9pm</td>
+          <td>$80</td>
+        </tr>
+        <tr>
+          <td>Comp sci tutoring</td>
+          <td>I suck at comp sci. I need 4 hours or so of help by next week so I don't fail out of everything [...]</td>
+          <td>2/16, 9pm</td>
+          <td>$80</td>
+        </tr>
+        <tr>
+          <td>Programming tutoring</td>
+          <td>I suck at programming. I need 4 hours or so of help by next week so I don't fail out of everything [...]</td>
+          <td>2/16, 9pm</td>
+          <td>$80</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+  <div class="modal fade" id="job-modal" tabindex="-1" role="dialog" aria-labelledby="job1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="job1">Help Moving</h4>
+      </div>
+      <div class="modal-body">
+        <p>I have to move a couch, two dressers and a table from (dorm) to (apartment building). The couch is light, but the dressers are heavy. I have a pickup truck but need an extra person to help move stuff. It should take less than an hour.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#job-confirm">Do this job!</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal fade" id="job-confirm" tabindex="-1" role="dialog" aria-labelledby="job2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="job2">Success!</h4>
+      </div>
+      <div class="modal-body">
+        <p>(username) has been notified that you want to do this job! We'll let you know as soon as they are approved. (username) will send you a message to work out the details. When you're done, don't forget to rate the requester!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</body>
+</html>
