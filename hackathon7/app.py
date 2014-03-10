@@ -30,7 +30,7 @@ def add():
     url = request.args.get('url','')
 
     #build new row and commit session
-    newPet = Pet(name, species, color, gender, latitude, longitude)
+    newPet = Pet(name, species, color, gender, latitude, longitude, url)
     db.session.add(newPet)
     db.session.commit()
 
